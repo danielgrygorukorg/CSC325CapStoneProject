@@ -24,7 +24,7 @@ public class Platformer extends Application{
 
         Player p = new Player();
         p.loadSprite("robot.png");
-        p.setMaze(new Image("maze.png"));
+        p.setMaze(new Image("levelmask.png"));
         p.setGraphicsContext(controller.gc);
         p.setX(26);
         p.setY(270);
@@ -52,6 +52,7 @@ public class Platformer extends Application{
     public void focusCanvas(Canvas canvas){
         canvas.requestFocus();
     }
+
 
     public static void main(String[] args) {
         launch();

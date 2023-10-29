@@ -41,7 +41,7 @@ public class Controller implements Runnable,inputHandler{
     @FXML
     public void initialize(){
         gc = can.getGraphicsContext2D();
-        maze1 = new Image("maze.png");
+        maze1 = new Image("levelmask.png");
         level = new Level((int) maze1.getWidth(), (int) maze1.getHeight());
         can.setWidth(level.getWidth());
         can.setHeight(level.getHeight());

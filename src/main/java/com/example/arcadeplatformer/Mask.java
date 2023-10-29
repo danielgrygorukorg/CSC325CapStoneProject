@@ -38,7 +38,7 @@ public class Mask {
             for (int j=0;j<mask.y_size;j++){
                 int x_tmp=i+x_offset;
                 int y_tmp=j+y_offset;
-                if (x_tmp<x_size&&y_tmp<y_size){
+                if (x_tmp<x_size&&y_tmp<y_size&&x_tmp>=0&&y_tmp>=0){
                     points[x_tmp][y_tmp].orVals(mask.points[i][j]);
                 }
             }
