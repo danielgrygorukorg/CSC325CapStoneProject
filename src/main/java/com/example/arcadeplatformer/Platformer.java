@@ -26,8 +26,8 @@ public class Platformer extends Application{
         p.loadSprite("robot.png");
         p.setMaze(new Image("levelmask.png"));
         p.setGraphicsContext(controller.gc);
-        p.setX(26);
-        p.setY(270);
+        p.setX(100);
+        p.setY(200);
         p.setResetX(p.getX());
         p.setResetY(p.getY());
         p.setMask(new Mask(p.getbBoxW(),p.getbBoxW()));
