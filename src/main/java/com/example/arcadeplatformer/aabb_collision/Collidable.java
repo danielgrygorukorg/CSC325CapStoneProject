@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface Collidable{
 
- ArrayList<GameObject> getCollidables();
+ ArrayList<Collidable> getCollidables();
 
 }

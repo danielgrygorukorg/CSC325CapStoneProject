@@ -12,7 +12,6 @@ public class SolidObject extends GameObject implements Collidable {
     }
     @Override
     boolean toDo() {
-        getCollidables();
         return isMarkedForDeletion();
     }
 
@@ -38,9 +37,7 @@ public class SolidObject extends GameObject implements Collidable {
 
 
     @Override
-    public ArrayList<GameObject> getCollidables() {
-        ArrayList<GameObject> tmp= new ArrayList<GameObject>();
-        tmp = getLevel().getInstances(Collidable.class);
-        return tmp;
+    public ArrayList<Collidable> getCollidables() {
+        return getLevel().getInstances(Collidable.class);
     }
 }

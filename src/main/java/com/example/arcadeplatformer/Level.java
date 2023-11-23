@@ -27,12 +27,11 @@ public class Level {
     }
 
 
-    public<T extends GameObject> ArrayList<T> getInstances(Class<?> cls){
+    public<T > ArrayList<T> getInstances(Class<?> cls){
         ArrayList<T> tmp = new ArrayList<>();
         for(GameObject gameObject:gameObjects){
             if (cls.isAssignableFrom(gameObject.getClass()) ){
                 tmp.add((T) gameObject);
-                System.out.println("is an instance of "+cls);
             }
         }
         return tmp;
