@@ -10,6 +10,8 @@ import javafx.scene.transform.Rotate;
 
 public abstract class GameObject {
     private Level level;
+    //flag
+    private boolean delete = false;
     private float resetX=0;
    private float resetY=0;
    private float x=0;
@@ -36,7 +38,8 @@ public abstract class GameObject {
             if (debug){gc.strokeRect(x- (double) bBoxW /2, y- (double) bBoxH /2, bBoxW, bBoxH);}}}
 
     // backend logic that gets called each frame
-    abstract void toDo() ;
+    abstract boolean toDo() ;
+    abstract void initialize();
 
     public void setGraphicsContext(GraphicsContext graphicsContext){
         gc= graphicsContext;
@@ -97,8 +100,10 @@ public abstract class GameObject {
     public Level getLevel(){
         return level;
     }
-    public void setLevel(Level level){
+    public void setLevelInitialize(Level level){
         this.level = level;
+        level.gameObjects.add(this);
+        initialize();
     }
     public int getRotation(){
         return curentRotation;
@@ -118,6 +123,14 @@ public abstract class GameObject {
     public float getResetY(){
        return resetY;
     }
+
+    public void markForDelettion(){
+        this.delete=true;
+    }
+    public boolean isMarkedForDeletion(){
+        return delete;
+    }
+    public abstract void onDelete();
     abstract void reset();
     //sets new roatation rleative to the original not curent rotation
     private void checkRotate(){

@@ -1,13 +1,11 @@
-package com.example.arcadeplatformer;
-
-import java.util.ArrayList;
+package com.example.arcadeplatformer.masking;
 
 public class Mask {
     //2D array of  X Y MaskPoint
     private int x_size;
     private int y_size;
     private MaskPoint[][] points;
-    Mask(int x_size,int y_size){
+   public Mask(int x_size,int y_size){
         //propogate point matrix with defaualt point vals
         this.x_size=x_size;
         this.y_size=y_size;
@@ -21,10 +19,10 @@ public class Mask {
     MaskPoint getPoint(int x,int y){
         return points[x][y];
     }
-    void setPoint(int x,int y,MaskPoint maskPoint){
+   public void setPoint(int x,int y,MaskPoint maskPoint){
         points[x][y]=maskPoint;
     }
-    void fill(int chanel){
+   public void fill(int chanel){
         //set chanel index of maskval to true for all mask points in this matrix
         for (int i=0;i<x_size;i++){
             for (int j=0;j<y_size;j++){
@@ -33,7 +31,7 @@ public class Mask {
         }
     }
     //take mask values and merge with own
-    void reflect(Mask mask,int x_offset, int y_offset){
+   public void reflect(Mask mask,int x_offset, int y_offset){
         for (int i=0;i<mask.x_size;i++){
             for (int j=0;j<mask.y_size;j++){
                 int x_tmp=i+x_offset;
@@ -44,7 +42,7 @@ public class Mask {
             }
         }
     }
-    void clear(){
+   public void clear(){
         //set maskval to false for all mask points in this matrix
         for (int i=0;i<x_size;i++){
             for (int j=0;j<y_size;j++){

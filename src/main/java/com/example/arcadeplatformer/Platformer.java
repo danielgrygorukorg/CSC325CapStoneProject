@@ -1,5 +1,6 @@
 package com.example.arcadeplatformer;
 
+import com.example.arcadeplatformer.masking.Mask;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -30,8 +31,7 @@ public class Platformer extends Application{
         p.setY(200);
         p.setResetX(p.getX());
         p.setResetY(p.getY());
-        p.setMask(new Mask(p.getbBoxW(),p.getbBoxW()));
-        p.propogate(1);
+
         controller.addToLevel(p);
 
 

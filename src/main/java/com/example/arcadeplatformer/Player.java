@@ -1,6 +1,5 @@
 package com.example.arcadeplatformer;
 
-import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 
@@ -22,7 +21,7 @@ public class Player extends SolidObject{
         pixelReader= image.getPixelReader();
     }
     @Override
-    void toDo() {
+    boolean toDo() {
         //fetch inputs from controller
         right= Controller.isRight();
         left= Controller.isLeft();
@@ -60,7 +59,8 @@ public class Player extends SolidObject{
         setX(getX()+getHsp());
         setY(getY()+getVsp());
         super.toDo();
-        }
+        return isMarkedForDeletion();
+    }
 
 
 
@@ -75,8 +75,6 @@ private void jump(){
 
     //maze collision
     private void mazeCollide(){
-
-
         //check if collision will occur next frame
         float tmpVsp= (int) getVsp();
         float tmpHsp = (int) getHsp();
