@@ -1,35 +1,57 @@
 package com.example.arcadeplatformer;
 
-import com.example.arcadeplatformer.aabb_collision.Collidable;
-import com.example.arcadeplatformer.masking.Mask;
-import com.example.arcadeplatformer.masking.Maskable;
+import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Level {
-    private int width;
-    private int height;
+    private double width;
+    private double height;
+    private static final int DEF_WIDTH=500;
+    private static final int DEF_HEIGHT=500;
+    private static Level level;
+    private GraphicsContext gc;
     protected ArrayList<GameObject> gameObjects;
-
-    public Level(int width, int height) {
+//only one level can ever exist at a single time
+    //lets me use default methods on interface that reference this
+    private Level(int width, int height) {
         this.width= width;
         this.height=height;
         gameObjects = new ArrayList<GameObject>();
     }
+public static Level getLevel(){
+        if (level==null){
+            level = new Level(Level.DEF_WIDTH,Level.DEF_HEIGHT);
+        }
+        return level;
+}
 
-
-    public int getHeight() {
-        return height;
+    public GraphicsContext getGc() {
+        return gc;
     }
-    public int getWidth(){
-        return width;
+
+    public void setGc(GraphicsContext gc) {
+        this.gc = gc;
     }
 
+    public double getHeight() {
+        return  this.height;
+    }
+    public double getWidth(){
+        return this.width;
+    }
+    public void setHeight(double height) {
+               this.height=height;
+    }
+    public void setWidth(double width){
+      this.width=width;
+    }
 
-    public<T > ArrayList<T> getInstances(Class<?> cls){
+    //utility function used by default method in interface to retrieve like instances from mixed arraylist
+
+    public static <T> ArrayList<T> getInstances(Class<?> cls){
         ArrayList<T> tmp = new ArrayList<>();
-        for(GameObject gameObject:gameObjects){
+        for(GameObject gameObject : level.gameObjects){
             if (cls.isAssignableFrom(gameObject.getClass()) ){
                 tmp.add((T) gameObject);
             }

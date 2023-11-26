@@ -1,5 +1,6 @@
 package com.example.arcadeplatformer;
 
+import com.example.arcadeplatformer.rendering.Renderable;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -7,6 +8,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+
+import java.util.ArrayList;
 
 import static java.lang.System.currentTimeMillis;
 
@@ -38,13 +41,12 @@ public class Controller implements Runnable,inputHandler{
     public void initialize(){
         gc = can.getGraphicsContext2D();
         maze1 = new Image("levelmask.png");
-        level = new Level((int) maze1.getWidth(), (int) maze1.getHeight());
+        level = Level.getLevel();
+        level.setHeight(maze1.getHeight());
+        level.setWidth(maze1.getWidth());
+        level.setGc(gc);
         can.setWidth(level.getWidth());
         can.setHeight(level.getHeight());
-
-
-        //check for tab change and rrequest focus
-
     }
     @FXML
     private void reset() {
@@ -62,9 +64,13 @@ public class Controller implements Runnable,inputHandler{
 
                 gc.clearRect(0,0,can.getWidth(),can.getHeight());
                 gc.drawImage(maze1,0,0);
-                //second maze
+                //get objects that implement renderable
+                ArrayList<Renderable> ren =Level.getInstances(Renderable.class);
+                for (Renderable renderable: ren){
+                    renderable.draw();
+                }
 
-                for (GameObject gameObject : level.gameObjects) gameObject.draw();
+
             }
         };
         a1.start();
@@ -80,7 +86,7 @@ public class Controller implements Runnable,inputHandler{
         }
     }
     public void addToLevel(GameObject gameObject){
-        gameObject.setLevelInitialize(level);
+        level.gameObjects.add(gameObject);
     }
     @Override
     //backend logic

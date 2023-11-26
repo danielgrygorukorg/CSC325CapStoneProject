@@ -21,7 +21,7 @@ public class Player extends SolidObject{
         pixelReader= image.getPixelReader();
     }
     @Override
-    boolean toDo() {
+    public boolean toDo() {
         //fetch inputs from controller
         right= Controller.isRight();
         left= Controller.isLeft();

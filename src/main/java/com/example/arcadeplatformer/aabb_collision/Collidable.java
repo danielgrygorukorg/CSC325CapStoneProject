@@ -1,12 +1,12 @@
 package com.example.arcadeplatformer.aabb_collision;
-import com.example.arcadeplatformer.GameObject;
 import com.example.arcadeplatformer.Level;
-
-import java.lang.constant.Constable;
+import com.example.arcadeplatformer.Coordinatable;
 import java.util.ArrayList;
 
-public interface Collidable{
+public interface Collidable extends Coordinatable{
 
- ArrayList<Collidable> getCollidables();
+ default ArrayList<Collidable> getCollidables(){
+  return Level.getInstances(Collidable.class);
+ }
 
 }
