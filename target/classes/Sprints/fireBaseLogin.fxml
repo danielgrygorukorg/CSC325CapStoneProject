@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar nodeOrientation="RIGHT_TO_LEFT">
@@ -21,22 +20,12 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Google Username:">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Username:">
          <VBox.margin>
             <Insets left="50.0" top="50.0" />
          </VBox.margin>
       </Text>
       <TextField fx:id="usernameTextField">
-         <VBox.margin>
-            <Insets left="50.0" right="50.0" top="10.0" />
-         </VBox.margin>
-      </TextField>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Google Password:">
-         <VBox.margin>
-            <Insets left="50.0" top="25.0" />
-         </VBox.margin>
-      </Text>
-      <TextField fx:id="passwordTextField">
          <VBox.margin>
             <Insets left="50.0" right="50.0" top="10.0" />
          </VBox.margin>
