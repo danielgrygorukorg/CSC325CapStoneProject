@@ -2,24 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <MenuBar nodeOrientation="RIGHT_TO_LEFT">
-        <menus>
-          <Menu mnemonicParsing="false" onAction="#backToMainScreen" text="Back">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Username:">
          <VBox.margin>
             <Insets left="50.0" top="50.0" />
@@ -36,4 +24,7 @@
          </VBox.margin>
       </Button>
    </children>
+   <padding>
+      <Insets top="100.0" />
+   </padding>
 </VBox>
