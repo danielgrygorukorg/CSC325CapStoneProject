@@ -6,7 +6,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
-public class SolidObject extends CoordinateObject implements Collidable, Renderable {
+public abstract class SolidObject extends CoordinateObject implements Collidable, Renderable {
  Image sprite;
     SolidObject(){
 

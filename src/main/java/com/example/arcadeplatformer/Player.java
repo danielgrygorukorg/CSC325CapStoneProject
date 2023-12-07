@@ -1,7 +1,12 @@
 package com.example.arcadeplatformer;
 
+import com.example.arcadeplatformer.aabb_collision.Collidable;
+import com.example.arcadeplatformer.aabb_collision.Collision;
+import com.example.arcadeplatformer.aabb_collision.CollisionGeometry;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
+
+import java.util.ArrayList;
 
 public class Player extends SolidObject{
     private boolean right=false;
@@ -93,4 +98,23 @@ private void jump(){
         };
     }
 
+    @Override
+    public CollisionGeometry getGeometry() {
+        return null;
+    }
+
+    @Override
+    public double getMass() {
+        return 1;
+    }
+
+    @Override
+    public int getMask() {
+        return 2;
+    }
+
+    @Override
+    public void collisionEvent(ArrayList<Collidable> collisions) {
+
+    }
 }

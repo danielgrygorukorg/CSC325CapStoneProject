@@ -10,4 +10,6 @@ module com.example.arcadeplatformer {
     exports com.example.arcadeplatformer;
     exports com.example.arcadeplatformer.masking;
     opens com.example.arcadeplatformer.masking to javafx.fxml;
+    exports com.example.arcadeplatformer.aabb_collision;
+    opens com.example.arcadeplatformer.aabb_collision to javafx.fxml;
 }

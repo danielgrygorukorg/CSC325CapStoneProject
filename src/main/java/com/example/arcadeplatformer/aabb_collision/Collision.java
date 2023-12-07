@@ -1,11 +1,18 @@
-package com.example.arcadeplatformer;
+package com.example.arcadeplatformer.aabb_collision;
 
+import com.example.arcadeplatformer.CoordinateObject;
 import javafx.scene.image.PixelReader;
+
+import java.util.ArrayList;
 
 public class Collision {
     private static int color= -16755815;
     private static int color2=-16760833;
-    static boolean pixelCollision(CoordinateObject coordinateObject, PixelReader pixelReader, int xOff, int yOff){
+    public static void resolveCollisions(ArrayList<Collidable> collidables){
+
+    }
+
+   public static boolean pixelCollision(CoordinateObject coordinateObject, PixelReader pixelReader, int xOff, int yOff){
             int w = coordinateObject.getbBoxW();
             int h = coordinateObject.getbBoxH();
             for (int i=0;i< h;i++){
@@ -31,7 +38,7 @@ public class Collision {
 
     //collision helper method
     //check if bounds of object intersect with a specific point
-    static boolean pointCollision(float x, float y, CoordinateObject o){
+  public   static boolean pointCollision(float x, float y, CoordinateObject o){
         boolean c =false;
         float x1=o.getX();
         float w1 =o.getbBoxW();

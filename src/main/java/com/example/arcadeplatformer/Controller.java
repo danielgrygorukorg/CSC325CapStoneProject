@@ -1,5 +1,7 @@
 package com.example.arcadeplatformer;
 
+import com.example.arcadeplatformer.aabb_collision.Collidable;
+import com.example.arcadeplatformer.aabb_collision.Collision;
 import com.example.arcadeplatformer.rendering.Renderable;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
@@ -102,7 +104,7 @@ public class Controller implements Runnable,inputHandler{
                 s = currentTimeMillis();
 
                 iterateThroughAll();
-
+                Collision.resolveCollisions(Level.getInstances(Collidable.class));
             }
         }
     }
