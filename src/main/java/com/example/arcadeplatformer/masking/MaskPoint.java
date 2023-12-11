@@ -1,4 +1,4 @@
-package com.example.arcadeplatformer;
+package com.example.arcadeplatformer.masking;
 
 import java.util.Arrays;
 

@@ -5,12 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-
-import java.util.ArrayList;
 
 import static java.lang.System.currentTimeMillis;
 
@@ -84,8 +80,7 @@ public class Controller implements Runnable,inputHandler{
         }
     }
     public void addToLevel(GameObject gameObject){
-        level.gameObjects.add(gameObject);
-        gameObject.setLevel(level);
+        gameObject.setLevelInitialize(level);
     }
     @Override
     //backend logic
@@ -99,7 +94,7 @@ public class Controller implements Runnable,inputHandler{
             if((c-s)>(1000/frameRate)){
                 c = currentTimeMillis();
                 s = currentTimeMillis();
-                level.clearMask();
+
                 iterateThroughAll();
 
             }

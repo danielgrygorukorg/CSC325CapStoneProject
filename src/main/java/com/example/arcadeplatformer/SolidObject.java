@@ -1,13 +1,28 @@
 package com.example.arcadeplatformer;
 
-public class SolidObject extends GameObject implements Maskable{
-    private Mask mask;
+import com.example.arcadeplatformer.aabb_collision.Collidable;
+
+
+import java.util.ArrayList;
+
+public class SolidObject extends GameObject implements Collidable {
+
     SolidObject(){
 
     }
     @Override
-    void toDo() {
-        projectMask(getLevel().getMask());
+    boolean toDo() {
+        return isMarkedForDeletion();
+    }
+
+    @Override
+    void initialize() {
+
+    }
+
+    @Override
+    public void onDelete() {
+
     }
 
     @Override
@@ -20,30 +35,9 @@ public class SolidObject extends GameObject implements Maskable{
 
     }
 
-    @Override
-    public void projectMask(Mask mask) {
-        mask.reflect(mask, (int) getX()-getbBoxW()/2, (int) getY()-getbBoxH()/2);
-    }
 
     @Override
-    public void setMask(Mask mask) {
-        this.mask=mask;
+    public ArrayList<Collidable> getCollidables() {
+        return getLevel().getInstances(Collidable.class);
     }
-
-    @Override
-    public Mask getMask() {
-        return this.mask;
-    }
-
-    @Override
-    public void propogate(int mask_chanel) {
-        mask.fill(mask_chanel);
-    }
-
-    @Override
-    public void clearMask() {
-        getMask().clear();
-    }
-
-
 }

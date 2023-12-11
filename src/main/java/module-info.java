@@ -8,4 +8,6 @@ module com.example.arcadeplatformer {
 
     opens com.example.arcadeplatformer to javafx.fxml;
     exports com.example.arcadeplatformer;
+    exports com.example.arcadeplatformer.masking;
+    opens com.example.arcadeplatformer.masking to javafx.fxml;
 }
