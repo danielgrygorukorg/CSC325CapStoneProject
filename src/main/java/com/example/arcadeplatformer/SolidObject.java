@@ -45,8 +45,8 @@ public abstract class SolidObject extends CoordinateObject implements Collidable
                 gc.drawImage(sprite, (int) (getX()-sprite.getWidth()/2),(int) (getY()-sprite.getHeight()/2));
             }
             gc.setStroke(Color.AQUA);
-            boolean debug = false;
-            if (debug){gc.strokeRect(getX()- (double) sprite.getWidth() /2, getY()- (double) sprite.getHeight() /2, sprite.getWidth(), sprite.getHeight());}}}
+
+            if (this.debug()){gc.strokeRect(getX()- (double) getbBoxW() /2, getY()- (double) getbBoxH() /2, getbBoxW(), getbBoxH());}}}
 
 
     public void loadSprite(String image) {

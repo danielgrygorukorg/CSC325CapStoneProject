@@ -30,7 +30,12 @@ public class Platformer extends Application{
         p.setY(200);
         p.setResetX(p.getX());
         p.setResetY(p.getY());
-
+        p.setbBoxH(25);
+        p.setbBoxW(25);
+        GroundBlock gb1 = new GroundBlock(400,50);
+        gb1.setX(200);
+        gb1.setY(500);
+        controller.addToLevel(gb1);
         controller.addToLevel(p);
 
 

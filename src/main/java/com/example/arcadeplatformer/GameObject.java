@@ -8,4 +8,6 @@ public interface GameObject {
     boolean isMarkedForDeletion();
 
     boolean toDo();
+
+    boolean debug();
 }

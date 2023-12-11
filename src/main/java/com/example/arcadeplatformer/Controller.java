@@ -104,7 +104,7 @@ public class Controller implements Runnable,inputHandler{
                 s = currentTimeMillis();
 
                 iterateThroughAll();
-                Collision.resolveCollisions(Level.getInstances(Collidable.class));
+                Collision.handleCollisions(Level.getInstances(Collidable.class));
             }
         }
     }

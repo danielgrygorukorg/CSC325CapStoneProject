@@ -1,8 +1,13 @@
 package com.example.arcadeplatformer;
 
 public interface Coordinatable extends GameObject{
-    public void setX(float x);
-    public void setY(float y);
-    float getX();
-    float getY();
+    public void setX(double x);
+    public void setY(double y);
+    double getX();
+    double getY();
+    double getHsp();
+    double getVsp();
+
+    void setVsp(double vsp);
+    void setHsp(double hsp);
 }

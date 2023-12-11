@@ -67,11 +67,13 @@ public class Player extends SolidObject{
         return isMarkedForDeletion();
     }
 
+    @Override
+    public boolean debug() {
+        return true;
+    }
 
 
-
-
-private void jump(){
+    private void jump(){
         //check if grounded
     if (Collision.pixelCollision(this,pixelReader,0,1)){
         setVsp(getVsp()-j_speed);
@@ -100,7 +102,7 @@ private void jump(){
 
     @Override
     public CollisionGeometry getGeometry() {
-        return null;
+       return new CollisionGeometry(getbBoxW(),getbBoxH());
     }
 
     @Override
@@ -114,7 +116,7 @@ private void jump(){
     }
 
     @Override
-    public void collisionEvent(ArrayList<Collidable> collisions) {
+    public void collisionEvent(Collidable collision) {
 
     }
 }

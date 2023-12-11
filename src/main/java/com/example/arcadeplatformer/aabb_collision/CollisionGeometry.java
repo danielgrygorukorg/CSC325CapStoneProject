@@ -8,12 +8,12 @@ public class CollisionGeometry {
     //if null bBox dimensions will be used for collision
     protected ArrayList<Shape> shapes;
 
-    CollisionGeometry (double bBoxW, double bBoxH){
+    public CollisionGeometry (double bBoxW, double bBoxH){
         this.bBoxW= bBoxW;
         this.bBoxH=bBoxH;
         shapes=null;
     }
-    CollisionGeometry (double bBoxW, double bBoxH,ArrayList<Shape> shapes){
+    public CollisionGeometry (double bBoxW, double bBoxH,ArrayList<Shape> shapes){
         this.bBoxW= bBoxW;
         this.bBoxH=bBoxH;
         this.shapes=shapes;

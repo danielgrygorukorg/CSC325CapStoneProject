@@ -11,7 +11,7 @@ double getMass();
 //arbitrary value to allow objects to choose how to handle collisions with certain objects
 int getMask();
 //called when involved in a resolved collision takes all objects involved
-void collisionEvent(ArrayList<Collidable> collisions);
+void collisionEvent(Collidable collision);
 
  default ArrayList<Collidable> getCollidables(){
   return Level.getInstances(Collidable.class);

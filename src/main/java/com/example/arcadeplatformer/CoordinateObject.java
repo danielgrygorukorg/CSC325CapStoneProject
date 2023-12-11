@@ -1,25 +1,17 @@
 package com.example.arcadeplatformer;
 
-import javafx.geometry.Rectangle2D;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.transform.Rotate;
-
 public abstract class CoordinateObject implements Coordinatable{
     private Level level;
     //flag
     private boolean delete = false;
-    private float resetX=0;
-   private float resetY=0;
-   private float x=0;
+    private double resetX=0;
+   private double resetY=0;
+   private double x=0;
    private int newRotation =0;
    private int curentRotation=0;
-   private float y=0;
-   private float hsp=0;
-   private float vsp=0;
+   private double y=0;
+   private double hsp=0;
+   private double vsp=0;
    private int bBoxW=0;
     private int bBoxH=0;
 
@@ -31,25 +23,25 @@ public abstract class CoordinateObject implements Coordinatable{
     abstract void initialize();
 
     @Override
-   public void setX(float x){
+   public void setX(double x){
        this.x=x;
    }
    @Override
-   public void setY(float y){
+   public void setY(double y){
         this.y=y;
     }
     @Override
-    public float getX(){
+    public double getX(){
         return x;
     }
     @Override
-    public float getY(){
+    public double getY(){
         return y;
     }
-    public void setHsp(float hsp){
+    public void setHsp(double hsp){
        this.hsp=hsp;
     }
-    public void setVsp(float vsp){
+    public void setVsp(double vsp){
        this.vsp=vsp;
     }
     public void setbBoxW(int bBoxW){
@@ -59,10 +51,10 @@ public abstract class CoordinateObject implements Coordinatable{
         this.bBoxH=bBoxH;
     }
 
-    public float getHsp(){
+    public double getHsp(){
        return hsp;
     }
-    public float getVsp(){
+    public double getVsp(){
        return vsp;
     }
     public int getbBoxW(){
@@ -72,16 +64,16 @@ public abstract class CoordinateObject implements Coordinatable{
        return bBoxH;
     }
 
-    public void setResetX(float x){
+    public void setResetX(double x){
         resetX=x;
     }
-    public void setResetY(float y){
+    public void setResetY(double y){
         resetY=y;
     }
-    public float getResetX(){
+    public double getResetX(){
         return resetX;
     }
-    public float getResetY(){
+    public double getResetY(){
        return resetY;
     }
     @Override
